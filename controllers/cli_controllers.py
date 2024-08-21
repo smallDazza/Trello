@@ -21,7 +21,7 @@ def seed_tables():
         User(
             name = "User A",
             email = "usera@email.com",
-            password = bcrypt.generate_password_hash("123456").decode("utf-8")
+            password = bcrypt.generate_password_hash("654321").decode("utf-8")
         )
     ]
 
@@ -29,7 +29,7 @@ def seed_tables():
 
     db.session.commit()
 
-    print("Tables created!")
+    print("Tables seeded!")
 
 @db_commands.cli.command("drop")
 def drop_tables():

@@ -99,12 +99,12 @@ def update_card(card_id):
     is_admin = authorise_as_admin()
     # if the card exists
     if card:
-        # if the user is not the owner of the card
-        if not is_admin and str(card.user_id) != get_jwt_identity():
-            # return error message
-            return {"error": "Cannot perform this operation. Only owners can perform this operation. "}
+        # # if the user is not the owner of the card
+        # if not is_admin and str(card.user_id) != get_jwt_identity():
+        #     # return error message
+        #     return {"error": "Cannot perform this operation. Only owners can perform this operation. "}
 
-        # update the fields as required
+        # # update the fields as required
         card.title = body_data.get("title") or card.title
         card.description = body_data.get("description") or card.description
         card.status = body_data.get("status") or card.status
